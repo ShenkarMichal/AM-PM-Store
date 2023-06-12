@@ -14,4 +14,15 @@ router.get("/products", async (request: Request, response: Response, next: NextF
     }
 })
 
+//Get all categories:
+router.get("/categories", async (request: Request, response: Response, next: NextFunction) => {
+    try {
+        const categories = await productsLogic.getAllCategories()
+        response.json(categories)    
+    }
+    catch (err: any) {
+        next(err)        
+    }
+})
+
 export default router
