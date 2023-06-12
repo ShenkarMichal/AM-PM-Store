@@ -1,0 +1,14 @@
+Mon, 12 Jun 2023 09:28:58 GMT
+CatchAll error
+Stack: MongooseError: Operation `products.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\FullStack\Projects\FullStack-MEAN-Systems\AM-PM\Backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:185:23)
+    at listOnTimeout (node:internal/timers:569:17)
+    at processTimers (node:internal/timers:512:7)
+----------------------------------------------------------------------------------------------------
+Mon, 12 Jun 2023 09:29:32 GMT
+CatchAll error
+Stack: MongooseError: Operation `products.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\FullStack\Projects\FullStack-MEAN-Systems\AM-PM\Backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:185:23)
+    at listOnTimeout (node:internal/timers:569:17)
+    at processTimers (node:internal/timers:512:7)
+----------------------------------------------------------------------------------------------------
