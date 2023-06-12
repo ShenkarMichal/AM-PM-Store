@@ -8,6 +8,12 @@ export class RouteNotFoundErrorModel extends ErrorsModel {
     }
 }
 
+export class ResourceNotFoundErrorModel extends ErrorsModel {
+    public constructor(id: string){
+        super(404, `The id ${id} is not exists`)
+    }
+}
+
 export class AuthErrorModel extends ErrorsModel {
     public constructor(msg: string){
         super(401, msg)

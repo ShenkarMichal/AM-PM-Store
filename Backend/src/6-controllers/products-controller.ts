@@ -50,4 +50,28 @@ router.get("/products/:categoryId", async (request: Request, response: Response,
     }
 })
 
+//Delete product:
+router.delete("/products/:_id", async (request: Request, response: Response, next: NextFunction) => {
+    try {
+        const _id = request.params._id
+        await productsLogic.deleteProduct(_id)
+        response.sendStatus(204)  
+    }
+    catch (err: any) {
+        next(err)        
+    }
+})
+
+//Get product by category:
+router.get("/products/:categoryId", async (request: Request, response: Response, next: NextFunction) => {
+    try {
+        const categoryId = request.params.categoryId
+        const products = await productsLogic.getProductsByCategory(categoryId)
+        response.json(products)    
+    }
+    catch (err: any) {
+        next(err)        
+    }
+})
+
 export default router

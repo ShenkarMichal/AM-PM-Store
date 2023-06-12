@@ -1,5 +1,5 @@
 import { CategoryModel, ICategoryModel } from "../4-models/category-model";
-import { ValidateErrorModel } from "../4-models/errors-model";
+import { ResourceNotFoundErrorModel, ValidateErrorModel } from "../4-models/errors-model";
 import { IProductModel, ProductModel } from "../4-models/product-model";
 
 function getAllProducts(): Promise<IProductModel[]> {
@@ -23,10 +23,16 @@ function getProductsByCategory(categoryId: string): Promise<IProductModel[]>{
     return ProductModel.find({categoryId}).populate("categories").exec()
 }
 
+async function deleteProduct(_id: string): Promise<void> {
+    const deleteProduct = await ProductModel.findByIdAndDelete(_id)
+    if(!deleteProduct) throw new ResourceNotFoundErrorModel(_id)
+}
+
 
 export default {
     getAllProducts,
     getAllCategories,
     addProduct,
-    getProductsByCategory
+    getProductsByCategory,
+    deleteProduct
 }
