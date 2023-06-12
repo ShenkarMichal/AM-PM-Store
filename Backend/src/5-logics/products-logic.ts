@@ -19,8 +19,14 @@ function addProduct(product: IProductModel): Promise<IProductModel> {
     return product.save()
 }
 
+function getProductsByCategory(categoryId: string): Promise<IProductModel[]>{
+    return ProductModel.find({categoryId}).populate("categories").exec()
+}
+
+
 export default {
     getAllProducts,
     getAllCategories,
-    addProduct
+    addProduct,
+    getProductsByCategory
 }
