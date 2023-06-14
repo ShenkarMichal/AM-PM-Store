@@ -2,12 +2,12 @@ import mongoose from "mongoose"
 
 //1 - interface
 export interface ICategoryModel extends mongoose.Document {
-    name: string
+    categoryName: string
 }
 
 //2 - schema
 export const CategorySchema = new mongoose.Schema<ICategoryModel>({
-    name: {
+    categoryName: {
         type: String,
         required: [true, "Name is required"],
         minlength: [2, "Name nust be at least 2 characters"],

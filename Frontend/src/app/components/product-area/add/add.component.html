@@ -1,0 +1,26 @@
+<div>
+
+    <form (ngSubmit)="send()" ngNativeValidate #addForm>
+
+        <label>Category:</label>
+        <select name="categoryId" [(ngModel)]="newProduct.categoryId" required>
+            <option selected value="">Select</option>
+            <option *ngFor="let c of categories" value={{c._id}}>{{c.categoryName}}</option>
+        </select>
+
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="newProduct.name" required name="name"/>
+
+        <label>Production:</label>
+        <input type="datetime-local" [(ngModel)]="newProduct.production" required name="production"/>
+
+        <label>Expire:</label>
+        <input type="datetime-local" [(ngModel)]="newProduct.expire" required name="expire"/>
+
+        <label>Price:</label>
+        <input type="number" [(ngModel)]="newProduct.price" required name="price"/>
+
+        <button>ADD PRODUCT</button>
+
+    </form>
+</div>

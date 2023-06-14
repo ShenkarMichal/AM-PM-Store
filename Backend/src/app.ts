@@ -13,7 +13,7 @@ dal.connect()
 const server = express()
 
 server.use("/api/", expressRateLimit({
-    max: 1,
+    max: 2,
     windowMs: 1000
 }))
 

@@ -1,0 +1,14 @@
+th ,td{
+    border: double 1px black;
+    background-color: white;
+}
+
+th {
+    font-size: larger;
+}
+
+table {
+    margin: auto;
+    border: 1px solid black;
+}
+

@@ -1,0 +1,26 @@
+<div>
+
+    <select (change)="getProductsByCategory()" [(ngModel)]="categoryId">
+        <option selected>Select Category</option>
+        <option *ngFor="let c of categories" value={{c._id}}>{{c.categoryName}}</option>
+    </select>
+
+    <table>
+        <thead>
+            <th>Name:</th>
+            <th>Production:</th>
+            <th>Expire:</th>
+            <th>Price ($):</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{p.name}}</td>
+                <td>{{p.production}}</td>
+                <td>{{p.expire}}</td>
+                <td>{{p.price}}</td>
+                <td (click)="deleteProduct(p._id)">❌</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
